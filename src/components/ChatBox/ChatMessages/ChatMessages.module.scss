@@ -1,0 +1,72 @@
+@import "styles/variables";
+
+.container {
+  height: 100%;
+  width: 100%;
+  max-height: 60vh;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  padding-right: 30px;
+  padding-left: 35px;
+
+  &::-webkit-scrollbar {
+    width: 7px;
+  }
+
+  .dateLabelContainer {
+    display: flex;
+    justify-content: center;
+    margin: 10px 0;
+
+    .dateLabel {
+      padding: 5px 12px 6px;
+      text-align: center;
+      background-color: $bg-blue-600;
+      border-radius: 7.5px;
+      color: white;
+    }
+  }
+
+  .message {
+    width: fit-content;
+    max-width: 70%;
+    display: flex;
+    gap: 15px;
+    align-items: flex-end;
+    padding: 8px 16px;
+    border-radius: 5px;
+    margin: 10px 0;
+    white-space: pre-wrap;
+
+    p {
+      color: $text-primary-blue;
+      font-size: 14px;
+
+      span {
+        margin-left: 15px;
+        font-size: 10px;
+        color: $text-light-gray;
+        white-space: nowrap;
+      }
+    }
+  }
+
+  .messageLeft {
+    background-color: $bg-bluish-white;
+    justify-content: flex-start;
+    margin-right: auto;
+    word-break: break-all;
+  }
+
+  .messageRight {
+    justify-content: flex-end;
+    background-color: $bg-light-gray;
+    margin-left: auto;
+    word-break: break-all;
+  }
+}
+
+.mobileContainer {
+  padding: 0 20px;
+  max-height: 70vh;
+}

@@ -1,0 +1,50 @@
+@import "styles/variables";
+
+.container {
+  flex: 3.6;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+
+  .header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 30px;
+    border-bottom: 1px solid $bg-medium-gray;
+
+    .headerLeft {
+      display: flex;
+      align-items: center;
+      gap: 17px;
+      cursor: pointer;
+
+      .info {
+        display: flex;
+        flex-direction: column;
+      }
+
+      .title {
+        font-weight: bold;
+        color: $text-dark;
+      }
+    }
+  }
+
+  .body {
+    flex: 1;
+  }
+}
+
+.mobileContainer {
+  min-height: 92vh;
+
+  * {
+    font-size: 0.875rem;
+  }
+
+  .header {
+    padding: 10px 20px;
+    gap: 15px;
+  }
+}
