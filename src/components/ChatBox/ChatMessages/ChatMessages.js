@@ -55,7 +55,7 @@ function ChatMessages(props) {
                   item.userType === "bot" ? styles.right : styles.left
                 }`}
               >
-                {item.userType}
+                {item.userType === "user" ? "You" : "Bot"}
               </p>
             </div>
             <div
