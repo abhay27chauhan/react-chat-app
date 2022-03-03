@@ -49,9 +49,18 @@ function ChatMessages(props) {
                 </div>
               </div>
             )}
+            <div className={styles.user}>
+              <p
+                className={` ${
+                  item.userType === "bot" ? styles.right : styles.left
+                }`}
+              >
+                {item.userType}
+              </p>
+            </div>
             <div
               className={`${styles.message} ${
-                item.userType === "user"
+                item.userType === "bot"
                   ? styles.messageRight
                   : styles.messageLeft
               }`}

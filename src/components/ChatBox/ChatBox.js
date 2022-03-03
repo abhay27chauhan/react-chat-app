@@ -6,13 +6,14 @@ import ChatFooter from "./ChatFooter/ChatFooter";
 import NameInitials from "components/StyledComponent/NameInitals";
 import convertToNameInitials from "utils/ConvertNameInitials";
 import useWindowSize from "utils/useWindowResize";
+import useLocalStorge from "Hooks/useLocalStorage";
 
 import styles from "./ChatBox.module.scss";
 
 function ChatBox() {
+  const [msgList, setMsgList] = useLocalStorge("msgList", []);
   const isMobileView = useWindowSize() < 769;
   const [name] = useState("Chat Bot");
-  const [msgList, setMsgList] = useState([]);
   const lastestMessage = useRef();
 
   const onSend = (message) => {
@@ -35,7 +36,7 @@ function ChatBox() {
       userType: "bot",
       timestamp: new Date(),
     };
-    setTimeout(() => setMsgList((msgList) => [...msgList, botMsg]), 2000);
+    setTimeout(() => setMsgList((msgList) => [...msgList, botMsg]), 1500);
   }, [msgList]);
 
   return (

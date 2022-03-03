@@ -35,7 +35,7 @@
     align-items: flex-end;
     padding: 8px 16px;
     border-radius: 5px;
-    margin: 10px 0;
+    margin: 0px 0 10px;
     white-space: pre-wrap;
 
     p {
@@ -63,6 +63,26 @@
     background-color: $bg-light-gray;
     margin-left: auto;
     word-break: break-all;
+  }
+}
+
+.user {
+  display: flex;
+  margin-top: 10px;
+
+  p {
+    margin-bottom: 0px;
+    font-size: 14px;
+  }
+
+  .right {
+    justify-content: flex-end;
+    margin-left: auto;
+  }
+  
+  .left {
+    justify-content: flex-start;
+    margin-right: auto;
   }
 }
 
