@@ -17,14 +17,10 @@ function ChatFooter(props) {
 
   const inputChangeHandler = (event) => {
     const value = event.target.value;
-    const alt = document.getElementById("autoresize");
 
     if (event.target?.rows > 1 && !value?.includes("\n")) {
       setCurrentRows(1);
     }
-
-    alt.style.height = "auto";
-    alt.style.height = alt.scrollHeight + "px";
 
     setInputValue(value);
     if (value.trim()) {
@@ -38,12 +34,10 @@ function ChatFooter(props) {
     event.preventDefault();
     if (!inputValue) return;
     const { onSend } = props;
-    onSend(inputValue, "text");
+    onSend(inputValue);
     setInputValue("");
     setCurrentRows(1);
     inputRef?.current?.focus();
-    const alt = document.getElementById("autoresize");
-    alt.style.height = "auto";
     showEmojiPicker(false);
   };
 

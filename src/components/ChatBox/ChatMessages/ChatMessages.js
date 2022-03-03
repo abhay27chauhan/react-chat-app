@@ -51,7 +51,7 @@ function ChatMessages(props) {
             )}
             <div
               className={`${styles.message} ${
-                item.profileId === "bot"
+                item.userType === "user"
                   ? styles.messageRight
                   : styles.messageLeft
               }`}

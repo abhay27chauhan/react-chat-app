@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useRef, useEffect } from "react";
 
 import ChatMessages from "./ChatMessages/ChatMessages";
 import ChatFooter from "./ChatFooter/ChatFooter";
@@ -11,12 +11,33 @@ import styles from "./ChatBox.module.scss";
 
 function ChatBox() {
   const isMobileView = useWindowSize() < 769;
-  const [name, setName] = useState("Chat Bot");
+  const [name] = useState("Chat Bot");
   const [msgList, setMsgList] = useState([]);
+  const lastestMessage = useRef();
 
-  const onSend = () => {};
+  const onSend = (message) => {
+    const msgObj = {
+      userType: "user",
+      content: message,
+      timestamp: new Date(),
+    };
 
-  console.log(setMsgList, setName);
+    lastestMessage.current = msgObj;
+    setMsgList([...msgList, msgObj]);
+  };
+
+  useEffect(() => {
+    if (msgList.length == 0 || msgList[msgList.length - 1].userType == "bot")
+      return;
+    const lastMsg = lastestMessage.current;
+    const botMsg = {
+      ...lastMsg,
+      userType: "bot",
+      timestamp: new Date(),
+    };
+    setTimeout(() => setMsgList((msgList) => [...msgList, botMsg]), 2000);
+  }, [msgList]);
+
   return (
     <div
       className={`${styles.container} ${
