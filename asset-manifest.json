@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.css": "/leaderboard-frontend/static/css/main.8c7ded91.css",
+    "main.js": "/leaderboard-frontend/static/js/main.a282e908.js",
+    "index.html": "/leaderboard-frontend/index.html",
+    "static/media/emojiIcon.svg": "/leaderboard-frontend/static/media/emojiIcon.9275ae76bf6dd291e020e57a2cb83e03.svg",
+    "main.8c7ded91.css.map": "/leaderboard-frontend/static/css/main.8c7ded91.css.map",
+    "main.a282e908.js.map": "/leaderboard-frontend/static/js/main.a282e908.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.8c7ded91.css",
+    "static/js/main.a282e908.js"
+  ]
+}
